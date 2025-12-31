@@ -2,7 +2,7 @@
 
 A comprehensive benchmarking tool for comparing the performance of modern web storage technologies and libraries.
 
-<img width="1400" height="766" alt="image" src="https://github.com/user-attachments/assets/68c1fde1-68d0-4e87-9220-4f60c0e03d00" />
+<img width="1400" height="780" alt="image" src="https://github.com/user-attachments/assets/91a6c408-a617-449b-80ba-ff9a51a7397d" />
 
 ## Performance Overview
 
