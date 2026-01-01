@@ -200,7 +200,7 @@ function App() {
         </div>
 
         <div className="chart-container">
-          <ResponsiveContainer width="100%" height={600}>
+          <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData} margin={{ top: 10, right: 30, left: 10, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(128,128,128,0.1)" vertical={false} />
               <XAxis
@@ -257,33 +257,35 @@ function App() {
               <div className="suite-card-header">
                 <h2>{suite.name}</h2>
               </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Storage</th>
-                    <th>Write (ms)</th>
-                    <th>Read (ms)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {suiteResults.map((result, index) => (
-                    <tr key={`${result.adapterName}-${result.payloadSize}`}>
-                      <td className={`${(index === 0 && !result.error) ? 'rank-1' : ''} ${getStorageClassName(result.adapterName)}`}>
-                        {result.adapterName}
-                      </td>
-                      <td className={result.error ? 'error-cell' : ''}>{result.error ? '❌' : result.writeTime.toFixed(2)}</td>
-                      <td className={result.error ? 'error-cell' : ''}>{result.error ? '❌' : result.readTime.toFixed(2)}</td>
-                    </tr>
-                  ))}
-                  {suiteResults.length === 0 && (
+              <div className="table-container">
+                <table>
+                  <thead>
                     <tr>
-                      <td colSpan={3} style={{ textAlign: 'center', opacity: 0.5 }}>
-                        No results yet. Run benchmarks to see data.
-                      </td>
+                      <th>Storage</th>
+                      <th>Write (ms)</th>
+                      <th>Read (ms)</th>
                     </tr>
-                  )}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {suiteResults.map((result, index) => (
+                      <tr key={`${result.adapterName}-${result.payloadSize}`}>
+                        <td className={`${(index === 0 && !result.error) ? 'rank-1' : ''} ${getStorageClassName(result.adapterName)}`}>
+                          {result.adapterName}
+                        </td>
+                        <td className={result.error ? 'error-cell' : ''}>{result.error ? '❌' : result.writeTime.toFixed(2)}</td>
+                        <td className={result.error ? 'error-cell' : ''}>{result.error ? '❌' : result.readTime.toFixed(2)}</td>
+                      </tr>
+                    ))}
+                    {suiteResults.length === 0 && (
+                      <tr>
+                        <td colSpan={3} style={{ textAlign: 'center', opacity: 0.5 }}>
+                          No results yet. Run benchmarks to see data.
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
             </div>
           );
         })}
