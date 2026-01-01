@@ -2,7 +2,9 @@
 
 A comprehensive benchmarking tool for comparing the performance of modern web storage technologies and libraries.
 
-<img width="1400" height="780" alt="image" src="https://github.com/user-attachments/assets/91a6c408-a617-449b-80ba-ff9a51a7397d" />
+| <img width="1400" height="780" alt="image" src="https://github.com/user-attachments/assets/91a6c408-a617-449b-80ba-ff9a51a7397d" /> |
+|:--:| 
+|*Image taken from https://zebrasquirrel.github.io/web-storage-benchmark/*|
 
 ## Performance Overview
 
