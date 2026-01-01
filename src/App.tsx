@@ -158,7 +158,7 @@ function App() {
       </div>
       <header>
         <div className="title-row">
-          <img src="/database-stats.svg" alt="Logo" className="header-logo" />
+          <img src="public/database-stats.svg" alt="Logo" className="header-logo" />
           <h1>Web Storage Benchmark</h1>
         </div>
         <p className="subtitle">Comparing performance across various web storage technologies</p>

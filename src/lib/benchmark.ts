@@ -70,8 +70,6 @@ function generatePayload(size: number): string {
     return "a".repeat(size);
 }
 
-const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
 async function runOnce(adapter: StorageAdapter, key: string, data: string) {
     await adapter.clear();
     const writeStart = performance.now();
@@ -111,7 +109,6 @@ export async function runBenchmark(
             }
 
             while (runs < targetRuns) {
-                await wait(50);
                 const nextRun = await runOnce(adapter, key, data);
                 writeTime += nextRun.writeTime;
                 readTime += nextRun.readTime;

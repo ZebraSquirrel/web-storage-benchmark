@@ -87,6 +87,7 @@ body {
   width: 48px;
   height: 48px;
   filter: var(--logo-filter);
+  margin-top: 1rem;
 }
 
 [data-theme='dark'] .header-logo {
